@@ -232,6 +232,9 @@
                 $element.html($element.html().replace($element.text(), _this.highlighter($element.text())));
 
                 $.each(items[i], function(key, val) {
+                    if (val != null && typeof val === 'object'){
+                		val=JSON.stringify(val);
+                	}
                     $element.attr('data-' + key, val);
                 });
                 
